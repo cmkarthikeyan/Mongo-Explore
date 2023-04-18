@@ -1,0 +1,41 @@
+server:
+  port: 9095
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: cmk
+logging:
+  level:
+    ROOT: 'INFO '
+    org:
+      hibernate:
+        engine:
+          transaction:
+            internal:
+              TransactionImpl: DEBUG
+      springframework:
+        orm:
+          jpa: 'DEBUG '
+        transaction: 'DEBUG '
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+            repository:
+              query: DEBUG
+
+local-server-url: http://localhost:9095
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - prometheus
+          - health
+          - metrics
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n Execution Time: %X{executionTime} ms%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework.data.mongodb.repository.query" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+    </root>
+
+</configuration>
